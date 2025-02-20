@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js" >
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>History</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+
+<body id="top">
+    <div id="page" class="s-pagewrap ss-home">
+        <header class="s-header">
+            <div class="row s-header__inner width-sixteen-col">
+                <div class="s-header__block">
+                    <div class="s-header__logo">
+                        <a class="logo" href="{{ url_for('logo') }}" >
+                        <img src="{{ url_for('static', filename='images/logo.png') }} " alt="Homepage">
+                        </a>
+                    </div>
+                    <a class="s-header__menu-toggle" href="#0"><span>Menu</span></a>
+                </div>
+                <nav class="s-header__nav">
+                    <ul class="s-header__menu-links">
+                        <li><a href="{{ url_for('about') }}">About</a></li>
+                    </ul>
+                    <div class="s-header__contact">
+                        <a href="{{ url_for('signout') }}" class="btn btn--primary s-header__contact-btn">Sign Out</a>                        
+                    </div>
+                    
+                </nav>
+            </div> 
+
+        </header>
+        <section id="content" class="s-content">
+
+            <section id="intro" class="s-intro">
+
+                <div class="row s-intro__content width-sixteen-col" style="padding-bottom: 20px;">
+
+                    <!-- <div class="column lg-12 s-intro__content-inner grid-block"> -->
+                        <div class="container">
+                            <h1 style="color: rgb(176, 117, 6);text-align: center;">Website Information History</h1>
+                            <table class="table" style="padding-bottom: 20px;">
+                                <thead >
+                                    <tr>
+                                        <th style="color: #DAC0A3;">ID</th>
+                                        <th style="color: #DAC0A3;">URL</th>
+                                        <th style="color: #DAC0A3;">Query</th>
+                                        <th style="color: #DAC0A3;">Rank</th>
+                                        <th style="color: #DAC0A3;">Title Importance</th>
+                                        <th style="color: #DAC0A3;">Headers Importance</th>
+                                        <th style="color: #DAC0A3;">Body Text Importance</th>
+                                        <th style="color: #DAC0A3;">Meta Tags Importance</th>
+                                        <th style="color: #DAC0A3;">Alt Text for Images Importance</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for row in data %}
+                                        <tr>
+                                            <td>{{ row[0] }}</td>
+                                            <td>{{ row[1] }}</td>
+                                            <td>{{ row[2] }}</td>
+                                            <td>{{ row[3] }}</td>
+                                            <td>{{ row[4] }}</td>
+                                            <td>{{ row[5] }}</td>
+                                            <td>{{ row[6] }}</td>
+                                            <td>{{ row[7] }}</td>
+                                            <td>{{ row[8] }}</td>
+                                        </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>  
+                        
+                        
+                    </div>
+                </div>
+            </section>
+        </section>
+        <footer class="s-footer">
+            <div class="row s-footer__content">
+                <div class="column xl-6 lg-6 md-12 s-footer__block s-footer__about">                    
+                    <h3>About Our Product</h3>
+                    <p>
+                        ML-powered search app analyzes websites to deliver perfect results for your queries. Secure login (manual/Google OAuth) personalizes your experience. We analyze content, speed, backlinks (not just keywords) for superior ranking. Access past searches & store data securely. Powerful algorithms & user-friendly features make searching efficient. 
+                    </p>               
+                </div>                
+                <div class="column xl-3 lg-6 md-12 s-footer__block s-footer__site-links">
+                    <h3>Site Links</h3>
+                    <ul class="link-list">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="{{ url_for('about') }}">About</a></li>
+                    </ul>
+                </div>
+                <div class="column xl-3 lg-6 md-12 tab-12 s-footer__block s-footer__newsletter">
+                    <img src="{{ url_for('static', filename='images/lower.jpg') }}"  alt="">
+                    
+                </div>
+            </div>    
+        </footer>
+    </div>
+</body>
+</html>

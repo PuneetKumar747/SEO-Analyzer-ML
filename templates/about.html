@@ -1,1 +1,212 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js" >
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>About - Us</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    
+    <style>
+    .main {
+    /* font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
+    display: flex;
+    justify-content: center; /* Center the items horizontally */
+    align-items: flex-start; /* Align items to the top of the container */
+    height: 100vh;
+    margin: 0;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    /* background: linear-gradient(135deg, #3494e6, #ec6ead); */
+    padding: 20px;
+}
 
+.team-member {
+    text-align: center;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+    width: 300px;
+    margin: 20px; /* Set margin between each box */
+}
+
+.team-member:hover {
+    transform: translateY(-5px);
+}
+
+.team-member img {
+    width: 150px; /* Adjust image size */
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    border: 4px solid #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.team-member img:hover {
+    transform: scale(1.1);
+}
+
+.team-member h2 {
+    margin: 10px 0 5px 0 ;
+    font-size: 1.2em; /* Adjust font size */
+    color: #333;
+}
+.contact-info {
+    margin-top: 10px;
+    text-align: center;
+  }
+.team-member p {
+    margin-top: 5px 0;
+    color: #777;
+    font-size: 0.9em; /* Adjust font size */
+}
+
+.team-member a {
+    color: #0077b5;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+    font-size: 0.9em; /* Adjust font size */
+}
+
+.team-member a:hover {
+    color: #004471;
+}
+
+.team-member h3 {
+    margin: 5px 0;
+    color: #777;
+    background-color: #d6daef;
+    border: 1px solid black; /* You can adjust the border width and color */
+    padding: 5px;
+    font-size: 0.9em; /* Adjust font size */
+}
+
+      </style>
+</head>
+
+
+<body id="top">
+
+    <div id="page" class="s-pagewrap">
+
+        <header class="s-header">
+
+            <div class="row s-header__inner width-sixteen-col">
+
+                <div class="s-header__block">
+                    <div class="s-header__logo">
+                        <a class="logo" href="{{ url_for('logo') }}" >
+                            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Homepage">
+                        </a>
+                    </div>
+
+                    <a class="s-header__menu-toggle" href="#0"><span>Menu</span></a>
+                </div> <!-- end s-header__block -->
+
+                <nav class="s-header__nav">
+    
+                    <ul class="s-header__menu-links">
+                        <li><a href="{{ url_for('about') }}">About</a></li>
+                        <li><a href="{{ url_for('admin') }}">Admin</a></li>
+                    </ul> <!-- s-header__menu-links -->
+
+                    <div class="s-header__contact">
+                        <a href="{{ url_for('signout') }}" class="btn btn--primary s-header__contact-btn">Sign Out</a>                        
+                    </div> <!-- s-header__contact -->
+    
+                </nav> <!-- end s-header__nav -->
+
+            </div>
+        </header>
+        <section id="content" class="s-content">
+
+               <section class="s-pageheader pageheader">
+                <h2 style="color: #fff;">
+                    Meet Our Team Members
+                </h2>
+               </section>  
+               </section>
+                <div class="main">
+                    <div class="team-member">
+                        <img src="{{ url_for('static', filename='images/animesh.jpg') }}" alt="Animesh Avasthi">
+                        <h2>Animesh Avasthi</h2>
+                        <h3>ML model</h3>
+                    <div class="contact-info">
+                        <p>su-22002@sitare.org</p>
+                        <a href="https://www.linkedin.com/in/animesh-awasthi-000me/">LinkedIn</a>
+                    </div>
+                        </div>
+
+
+                    <div class="team-member">
+                    <img src="{{ url_for('static', filename='images/sahil.jpg') }}" alt="Sahil Kumar">
+                    <h2>Sahil Kumar</h2>
+                    <h3>Backend performer</h3>
+                    <div class="contact-info">
+                        <p>su-23034@sitare.org</p>
+                        <a href="https://www.linkedin.com/in/sahil-kumar-47837b2a1/">LinkedIn</a>
+                </div>
+                  </div>
+
+                  <div class="team-member">
+                    <img src="{{ url_for('static', filename='images/saksham.jpeg') }}" alt="Saksham Bharti">
+                    <h2>Saksham Bharti</h2>
+                    <h3>Backend performer</h3>
+                    <div class="contact-info">
+                    <p>su-23035@sitare.org</p>
+                    <a href="https://www.linkedin.com/in/saksham-bharti-0805ss/">LinkedIn</a>
+                  </div>
+                  </div>
+
+
+                  <div class="team-member">
+                    <img src="{{ url_for('static', filename='images/puneet.jpg') }}" alt="Puneet Kumar">
+                    <h2>Puneet Kumar</h2>
+                    <h3>Frontend performer</h3>
+                    <div class="contact-info">
+                    <p>su-23028@sitare.org</p>
+                    <a href="https://www.linkedin.com/in/puneet-kumar-kpuneet474">LinkedIn</a>
+                  </div>
+                  </div>
+        
+                  <div class="team-member">
+                    <img src="{{ url_for('static', filename='images/suresh.jpg') }}" alt="Suresh Singh Panwar">
+                    <h2>Suresh Singh</h2>
+                    <h3>Frontend performer</h3>
+                    <div class="contact-info">
+                    <p>su-23041@sitare.org</p>
+                    <a href="https://www.linkedin.com/in/suresh-singh-panwar-41286528a/">LinkedIn</a>
+                  </div>
+                  </div>
+                 
+                </div>
+
+
+        <footer class="s-footer">
+            <div class="row s-footer__content">
+                <div class="column xl-6 lg-6 md-12 s-footer_block s-footer_about">                    
+                    <h3>About Our Product</h3>
+                    <p>
+                        OML-powered search app analyzes websites to deliver perfect results for your queries. Secure login (manual/Google OAuth) personalizes your experience. We analyze content, speed, backlinks (not just keywords) for superior ranking. Access past searches & store data securely. Powerful algorithms & user-friendly features make searching efficient.
+                    </p>               
+                </div>                
+                <div class="column xl-3 lg-6 md-12 s-footer_block s-footer_site-links">
+                    <h3>Site Links</h3>
+                    <ul class="link-list">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="{{ url_for('about') }}">About</a></li>
+                        <li><a href="{{ url_for('admin') }}">Admin</a></li>
+                    </ul>
+                </div>
+                <div class="column xl-3 lg-6 md-12 tab-12 s-footer_block s-footer_newsletter">
+                    <img src="{{ url_for('static', filename='images/lower.jpg') }}"  alt="">
+                </div>
+            </div>    
+        </footer>
+    </div>
+
+</body>
+</html>
